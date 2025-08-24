@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>mesh — home</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="logo" href="index.html" aria-label="mesh logo"></a>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="index.html">home</a>
+                <a href="blog.html">blog</a>
+                <a href="papers.html">papers</a>
+                <a href="roadmap.html">roadmap</a>
+                <a href="about.html">about</a>
+            </nav>
+        </header>
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="navigation" aria-label="Mobile site navigation">
+            <nav class="mobile-nav">
+                <a href="index.html">home</a>
+                <a href="blog.html">blog</a>
+                <a href="papers.html">papers</a>
+                <a href="roadmap.html">roadmap</a>
+                <a href="about.html">about</a>
+            </nav>
+        </div>
+        <main class="container">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;">
+                <div style="display:flex; flex-direction:column; gap:32px;">
+                    <section class="hero">
+                        <h1 class="split">Introducing v0.1-2x2 Stage 002</h1>
+                        <p class="lede">Neural Mesh rethinks Mixture-of-Experts by arranging experts in a bidimensional grid that allows direct neighbor communication. Instead of routing to isolated experts, Mesh enables tokens to be dynamically routed while letting selected experts exchange information along grid edges, improving collaboration and contextual consistency.</p>
+                        <div class="badge">mesh</div>
+                    </section>
+                    <section class="card">
+                        <h2 class="split" style="font-size:42px">Introducing mesh</h2>
+                        <p>This is our first ever model! Allow us to explain how the mesh architecture works in detail.</p>
+                        <pre class="spec">
+Top-1 routing: 173M active parameters
+Top-2 routing: 242M active parameters (default)
+Dense routing: 302M active parameters
+                        </pre>
+                    </section>
+                </div>
+                <section class="card" style="margin-top:0;">
+                    <h2 class="split" style="font-size:42px">Mesh model routing</h2>
+                    <div class="mesh-wrap" aria-hidden="false" style="width:700px; height:420px; margin:0 auto 20px auto; font-size:0.85em;">
+                        <div class="mesh-grid" style="display:grid; grid-template-columns:1fr 1fr; grid-gap:48px; width:100%; height:320px;">
+                            <div class="mesh-cell" style="font-size:1em; min-height:100px;">Expert 1, 1</div>
+                            <div class="mesh-cell" style="font-size:1em; min-height:100px;">Expert 2, 1</div>
+                            <div class="mesh-cell" style="font-size:1em; min-height:100px;">Expert 1, 2</div>
+                            <div class="mesh-cell" style="font-size:1em; min-height:100px;">Expert 2, 2</div>
+                        </div>
+                        <div class="routing-panel" style="font-size:1em;">
+                            <div class="routing-status">
+                                <div class="routing-badge">top-1</div>
+                                <div>
+                                    <div class="routing-text" id="routing-desc">Active: Expert 1,1</div>
+                                    <div class="routing-text" id="routing-params">173M active parameters</div>
+                                </div>
+                            </div>
+                            <p class="routing-text">Animation: an expert is activated, then the routing mode toggles to <code>top-2</code> and a bond forms between experts (vertical or horizontal) to illustrate neighbor exchange.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="split.js"></script>
+        <script src="menu.js"></script>
+    </body>
+</html>

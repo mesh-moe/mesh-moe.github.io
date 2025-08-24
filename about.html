@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>mesh — about</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="logo" href="index.html" aria-label="mesh logo"></a>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="index.html">home</a>
+                <a href="blog.html">blog</a>
+                <a href="papers.html">papers</a>
+                <a href="roadmap.html">roadmap</a>
+                <a href="about.html">about</a>
+            </nav>
+        </header>
+
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="navigation" aria-label="Mobile site navigation">
+            <nav class="mobile-nav">
+                <a href="index.html">home</a>
+                <a href="blog.html">blog</a>
+                <a href="papers.html">papers</a>
+                <a href="roadmap.html">roadmap</a>
+                <a href="about.html">about</a>
+            </nav>
+        </div>
+
+        <main class="container">
+            <h1 class="split">About</h1>
+            <p>Mesh is a small language model proof-of-concept. This project explores routing and adapter merging to reduce catastrophic forgetting.</p>
+            <h2 class="split">Disclaimer</h2>
+            <p>This small language model is just a proof-of-concept, paving the way to the final release planned for Q4 2025.</p>
+            <p>Founder & lead model maker: <a href="https://huggingface.co/aquiffoo/">aquiffoo</a> — profile and contributions at <a href="https://github.com/aquiffoo">github</a>.</p>
+        </main>
+
+        <script src="split.js"></script>
+        <script src="menu.js"></script>
+    </body>
+</html>
